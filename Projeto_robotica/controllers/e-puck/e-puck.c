@@ -50,7 +50,7 @@ int main(int argc, char **argv) {
     if (caixa[c] != NULL)
       printf("%d. %s\n", c + 1, nomeCaixa);
     else
-      printf("Falha ao carregar a posição da %s\n", nomeCaixa);
+      printf("Não foi possível carregar a caixa %s\n", nomeCaixa);
   }
   printf("\n\n CAIXAS OK  \n\n");
 
@@ -98,7 +98,7 @@ int main(int argc, char **argv) {
       if (!rotacionando) {
         rotacionando = true;
         tempoRotacao = 0;
-        printf("Encontrou caixa leve, iniciando rotação.\n");
+        printf("Caixa leve encontrada.\n");
       }
 
       if (rotacionando) {
@@ -113,7 +113,7 @@ int main(int argc, char **argv) {
           // Para os motores e finaliza execução
           wb_motor_set_velocity(MotorEsquerdo, 0);
           wb_motor_set_velocity(MotorDireito, 0);
-          printf("Rotação concluída. Parando robô.\n");
+          printf("Finalizar rotação\n");
           wb_robot_cleanup();
           return 0;
         }
